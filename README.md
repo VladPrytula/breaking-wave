@@ -1,12 +1,7 @@
 # breaking-wave
 
-A three-dimensional, incompressible, free-surface Navier–Stokes solver that
-makes a wave shoal, plunge, run up a gravel beach around boulders and drain
-back through the stones. Written in NVIDIA Warp, run on one DGX Spark, with a
-Mitsuba rendering path. This is the solver behind the post
-[**One Shore, Multiple Representations**](https://vladyslavprytula.substack.com/p/one-shore-multiple-representations),
-cut down to the code, the two accepted captures and two documents that explain
-them.
+A three-dimensional, incompressible, free-surface Navier–Stokes solver with a wave shoal, plunge, run up a gravel beach around boulders and drain back through the stones. Uses NVIDIA Warp, tested on commodity gpu of 5080 class, with aMitsuba rendering path. Substack post: 
+[**One Shore, Multiple Representations**](https://vladyslavprytula.substack.com/p/one-shore-multiple-representations
 
 [![The third capture at 3.88 simulated seconds: the roller after the 3.9 s plunge wrapping the boulders](media/third-capture-03_88s-preview.jpg)](media/third-capture-0-6p8s-25fps.mp4)
 
@@ -28,7 +23,7 @@ was measured and what is still open.
 > are resolved. Breaking turbulence, foam, unresolved capillary structure,
 > sub-cell films and optical wetness are closures.
 
-Nothing is faked: no painted foam, no prescribed breaker collapse, no silent
+no fake cgi to the extent possible: no painted foam, no prescribed breaker collapse, no silent
 repair of mass, pressure or energy. Every closure is named, measurable and
 switchable, and switching it off reveals the phenomenon it owns.
 
