@@ -1,0 +1,17 @@
+# virtualenv (uv-created; recreate with `uv venv --python 3.12 .venv`)
+.venv/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+
+# simulation output: checkpoints, frames, logs
+out/
+
+# editor / os
+.DS_Store
+*.swp

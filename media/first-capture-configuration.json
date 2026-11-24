@@ -1,0 +1,752 @@
+{
+  "scene": {
+    "solver": {
+      "grid": {
+        "nx": 384,
+        "ny": 224,
+        "nz": 96,
+        "Lx": 4.8,
+        "Ly": 6.0,
+        "Lz": 0.96,
+        "x0": 0.0,
+        "y0": 0.0,
+        "z0": 0.0,
+        "ng": 1
+      },
+      "physics": {
+        "g": 9.81,
+        "rho": 1000.0,
+        "surface_tension": 0.0
+      },
+      "bc": {
+        "xlo": 0,
+        "xhi": 0,
+        "ylo": 1,
+        "yhi": 1,
+        "zlo": 0,
+        "zhi": 0
+      },
+      "device": "cuda:0",
+      "output_dir": "/home/vladp/src/water_sim/out/production_20261009/sequence",
+      "pressure_discretization": "liquid_mimetic",
+      "liquid_extension_inertia": 1.0,
+      "liquid_resolved_fraction": 0.02,
+      "interface_reconstruction": "height_function",
+      "wave_source_reconstruction": "plic_rays",
+      "wave_source_quadrature": 8,
+      "vof_flux_reconstruction": "swept_prism",
+      "momentum_speed_bound": "local",
+      "momentum_face_mass": "flux_consistent",
+      "velocity_extension_order": 0
+    },
+    "geometry": {
+      "beach": {
+        "toe_x": 1.75,
+        "slope": 0.15,
+        "base_elevation": 0.0,
+        "material_id": 1
+      },
+      "boulders": [
+        {
+          "centre": [
+            2.5,
+            3.35,
+            0.303269
+          ],
+          "radii": [
+            0.3,
+            0.24,
+            0.21
+          ],
+          "rotation_xyz": [
+            0.08,
+            -0.12,
+            0.2
+          ],
+          "exponent": 2.55,
+          "material_id": 2
+        },
+        {
+          "centre": [
+            2.65,
+            3.98,
+            0.322411
+          ],
+          "radii": [
+            0.27,
+            0.22,
+            0.19
+          ],
+          "rotation_xyz": [
+            -0.06,
+            0.1,
+            -0.25
+          ],
+          "exponent": 2.8,
+          "material_id": 2
+        },
+        {
+          "centre": [
+            2.28,
+            4.52,
+            0.234002
+          ],
+          "radii": [
+            0.24,
+            0.2,
+            0.17
+          ],
+          "rotation_xyz": [
+            0.1,
+            -0.08,
+            0.32
+          ],
+          "exponent": 2.45,
+          "material_id": 2
+        },
+        {
+          "centre": [
+            2.05,
+            1.55,
+            0.230508
+          ],
+          "radii": [
+            0.28,
+            0.23,
+            0.19
+          ],
+          "rotation_xyz": [
+            -0.07,
+            0.13,
+            0.18
+          ],
+          "exponent": 2.7,
+          "material_id": 2
+        },
+        {
+          "centre": [
+            2.78,
+            5.25,
+            0.31335
+          ],
+          "radii": [
+            0.26,
+            0.22,
+            0.18
+          ],
+          "rotation_xyz": [
+            0.06,
+            -0.11,
+            -0.3
+          ],
+          "exponent": 2.6,
+          "material_id": 2
+        }
+      ],
+      "materials": [
+        {
+          "material_id": 1,
+          "name": "beach",
+          "roughness": 0.8,
+          "dry_albedo": [
+            0.143,
+            0.14,
+            0.149
+          ],
+          "wet_albedo": [
+            0.108,
+            0.107,
+            0.113
+          ],
+          "wet_roughness": 0.34
+        },
+        {
+          "material_id": 2,
+          "name": "boulder",
+          "roughness": 0.68,
+          "dry_albedo": [
+            0.165,
+            0.17,
+            0.16
+          ],
+          "wet_albedo": [
+            0.116,
+            0.124,
+            0.111
+          ],
+          "wet_roughness": 0.3
+        }
+      ]
+    },
+    "water_depth": 0.22,
+    "inlet": {
+      "components": [
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.02193290924099183,
+          "temporal_mode": 2,
+          "alongshore_mode": 0,
+          "phase_offset": 1.1176160321499085,
+          "stokes_order": 2,
+          "gravity": 9.81,
+          "omega": 5.235987755982989,
+          "k": 3.9729333521206884,
+          "kx": 3.9729333521206884,
+          "ky": 0.0
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.029609427475338974,
+          "temporal_mode": 3,
+          "alongshore_mode": 0,
+          "phase_offset": 0.0,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 7.853981633974483,
+          "k": 6.917356627166669,
+          "kx": 6.917356627166669,
+          "ky": 0.0
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.015353036468694282,
+          "temporal_mode": 4,
+          "alongshore_mode": 0,
+          "phase_offset": 2.591987353072888,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 10.471975511965978,
+          "k": 11.332398143330813,
+          "kx": 11.332398143330813,
+          "ky": 0.0
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.010697545822544351,
+          "temporal_mode": 3,
+          "alongshore_mode": 1,
+          "phase_offset": 2.533203198609238,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 7.853981633974483,
+          "k": 6.917356627166669,
+          "kx": 6.837631168480388,
+          "ky": 1.0471975511965976
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.008286283363200999,
+          "temporal_mode": 3,
+          "alongshore_mode": -1,
+          "phase_offset": -2.7163575899037347,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 7.853981633974483,
+          "k": 6.917356627166669,
+          "kx": 6.837631168480388,
+          "ky": -1.0471975511965976
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.00958852196417678,
+          "temporal_mode": 3,
+          "alongshore_mode": 2,
+          "phase_offset": 1.085299713252577,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 7.853981633974483,
+          "k": 6.917356627166669,
+          "kx": 6.592672588751699,
+          "ky": 2.0943951023931953
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.007427237176400141,
+          "temporal_mode": 3,
+          "alongshore_mode": -2,
+          "phase_offset": -0.172506699995556,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 7.853981633974483,
+          "k": 6.917356627166669,
+          "kx": 6.592672588751699,
+          "ky": -2.0943951023931953
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.007832552752994491,
+          "temporal_mode": 3,
+          "alongshore_mode": 3,
+          "phase_offset": 1.1148116011474904,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 7.853981633974483,
+          "k": 6.917356627166669,
+          "kx": 6.162809286868876,
+          "ky": 3.141592653589793
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.006067069274127744,
+          "temporal_mode": 3,
+          "alongshore_mode": -3,
+          "phase_offset": -2.89241374444516,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 7.853981633974483,
+          "k": 6.917356627166669,
+          "kx": 6.162809286868876,
+          "ky": -3.141592653589793
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.005582311352200317,
+          "temporal_mode": 3,
+          "alongshore_mode": 4,
+          "phase_offset": -2.8198249921192513,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 7.853981633974483,
+          "k": 6.917356627166669,
+          "kx": 5.504894125021136,
+          "ky": 4.1887902047863905
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.004324039780083287,
+          "temporal_mode": 3,
+          "alongshore_mode": -4,
+          "phase_offset": -2.0324210764873865,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 7.853981633974483,
+          "k": 6.917356627166669,
+          "kx": 5.504894125021136,
+          "ky": -4.1887902047863905
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.006333858596750497,
+          "temporal_mode": 4,
+          "alongshore_mode": 1,
+          "phase_offset": 3.0075701653451405,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 10.471975511965978,
+          "k": 11.332398143330813,
+          "kx": 11.28391000352872,
+          "ky": 1.0471975511965976
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.00490618577248947,
+          "temporal_mode": 4,
+          "alongshore_mode": -1,
+          "phase_offset": -1.243075262530949,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 10.471975511965978,
+          "k": 11.332398143330813,
+          "kx": 11.28391000352872,
+          "ky": -1.0471975511965976
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.0060899696154242434,
+          "temporal_mode": 4,
+          "alongshore_mode": 2,
+          "phase_offset": 0.5672335388531398,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 10.471975511965978,
+          "k": 11.332398143330813,
+          "kx": 11.137179033940285,
+          "ky": 2.0943951023931953
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.004717270179889457,
+          "temporal_mode": 4,
+          "alongshore_mode": -2,
+          "phase_offset": 3.039996588573259,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 10.471975511965978,
+          "k": 11.332398143330813,
+          "kx": 11.137179033940285,
+          "ky": -2.0943951023931953
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.005690650055463804,
+          "temporal_mode": 4,
+          "alongshore_mode": 3,
+          "phase_offset": 1.2885923415612917,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 10.471975511965978,
+          "k": 11.332398143330813,
+          "kx": 10.888234167112604,
+          "ky": 3.141592653589793
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.004407958578781125,
+          "temporal_mode": 4,
+          "alongshore_mode": -3,
+          "phase_offset": -1.821911583842827,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 10.471975511965978,
+          "k": 11.332398143330813,
+          "kx": 10.888234167112604,
+          "ky": -3.141592653589793
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.0051469908099239774,
+          "temporal_mode": 4,
+          "alongshore_mode": 4,
+          "phase_offset": -0.4750631085788326,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 10.471975511965978,
+          "k": 11.332398143330813,
+          "kx": 10.52982831290488,
+          "ky": 4.1887902047863905
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.003986841937983638,
+          "temporal_mode": 4,
+          "alongshore_mode": -4,
+          "phase_offset": -2.489756946637854,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 10.471975511965978,
+          "k": 11.332398143330813,
+          "kx": 10.52982831290488,
+          "ky": -4.1887902047863905
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.004475289308721762,
+          "temporal_mode": 4,
+          "alongshore_mode": 5,
+          "phase_offset": -1.3517827155182975,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 10.471975511965978,
+          "k": 11.332398143330813,
+          "kx": 10.05025770307229,
+          "ky": 5.235987755982989
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.0034665441924278976,
+          "temporal_mode": 4,
+          "alongshore_mode": -5,
+          "phase_offset": -1.2426447939134642,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 10.471975511965978,
+          "k": 11.332398143330813,
+          "kx": 10.05025770307229,
+          "ky": -5.235987755982989
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.003698031336717574,
+          "temporal_mode": 4,
+          "alongshore_mode": 6,
+          "phase_offset": -3.0202071027998407,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 10.471975511965978,
+          "k": 11.332398143330813,
+          "kx": 9.431056678581157,
+          "ky": 6.283185307179586
+        },
+        {
+          "period": 2.4,
+          "depth": 0.22,
+          "alongshore_length": 6.0,
+          "amplitude": 0.0028644827561720636,
+          "temporal_mode": 4,
+          "alongshore_mode": -6,
+          "phase_offset": 2.1517975887086385,
+          "stokes_order": 1,
+          "gravity": 9.81,
+          "omega": 10.471975511965978,
+          "k": 11.332398143330813,
+          "kx": 9.431056678581157,
+          "ky": -6.283185307179586
+        }
+      ]
+    },
+    "incident_scale_from_aw1103": 1.45,
+    "projection": {
+      "pcg": {
+        "relative_tolerance": 2e-07,
+        "absolute_tolerance": 0.0,
+        "max_iterations": 10000,
+        "preconditioner": "jacobi"
+      },
+      "rms_divergence_tolerance": 0.0006
+    },
+    "timestep": {
+      "dt_max": 0.005,
+      "advective_cfl": 0.5,
+      "gravity_cfl": 0.5,
+      "viscous_cfl": 0.25,
+      "capillary_cfl": 0.25,
+      "viscous_limit_enabled": false,
+      "kinematic_viscosity": 1e-06
+    },
+    "viscosity": {
+      "molecular_viscosity": 1e-06,
+      "smagorinsky_cs": 0.12,
+      "maximum_sgs_viscosity": 0.02
+    },
+    "wall_stress": {
+      "wall_viscosity": 0.0002,
+      "beach_slip_length": 0.012,
+      "boulder_slip_length": 0.006
+    },
+    "contact_line": {
+      "contact_length": 0.05,
+      "advancing_diffusivity": 8e-05,
+      "receding_diffusivity": 4e-05,
+      "hysteresis_fraction": 0.005,
+      "mixed_tolerance": 0.0001
+    },
+    "porous_storage": {
+      "layer_depth": 0.08,
+      "capacity_fraction": 0.2,
+      "infiltration_rate": 0.8,
+      "drainage_time": 4.0
+    },
+    "porous_drag": {
+      "permeability": 2e-05,
+      "forchheimer_coefficient": 0.08,
+      "kinematic_viscosity": 1e-06
+    },
+    "foam": {
+      "dissipation_yield": 0.0001,
+      "deformation_yield": 0.006,
+      "deformation_threshold": 5.0,
+      "decay_time": 0.8,
+      "diffusivity": 5e-06,
+      "maximum_concentration": 1.0
+    },
+    "solid_wetness": {
+      "wetting_time": 0.25,
+      "drying_time": 30.0,
+      "contact_threshold": 0.05
+    },
+    "camera": {
+      "position": [
+        7.2,
+        3.0,
+        1.55
+      ],
+      "yaw_degrees": 180.0,
+      "pitch_degrees": 14.0,
+      "vertical_fov_degrees": 32.0,
+      "exposure": 1.12,
+      "white_balance": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "hero_camera": {
+      "position": [
+        6.75,
+        5.15,
+        1.55
+      ],
+      "yaw_degrees": 196.50436138175502,
+      "pitch_degrees": 15.984663800879124,
+      "vertical_fov_degrees": 38.0,
+      "exposure": 1.12,
+      "white_balance": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "hero_preview_resolution": [
+      640,
+      480
+    ],
+    "sunset_camera": {
+      "position": [
+        6.5,
+        4.8,
+        1.25
+      ],
+      "yaw_degrees": 196.2323506611562,
+      "pitch_degrees": 12.472758324663351,
+      "vertical_fov_degrees": 30.0,
+      "exposure": 0.62,
+      "white_balance": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "sunset_light_preset": "sunset",
+    "sunset_probe_resolution": [
+      960,
+      540
+    ],
+    "sunset_final_resolution": [
+      1920,
+      1080
+    ],
+    "sunset_render_seed": 1001,
+    "input_mode": "standalone",
+    "input_decision": "AW-708 produced the required event and AW-707 measured no physical or visible offshore seam, so conditional M8 remains deferred.",
+    "preview_duration": 4.8,
+    "preview_frame_times": [
+      0.0,
+      0.6,
+      1.2,
+      1.48,
+      1.96,
+      2.4,
+      3.0,
+      3.6,
+      4.2,
+      4.8
+    ],
+    "topology_x_bounds": [
+      1.65,
+      2.85
+    ],
+    "cluster_bounds": [
+      1.7,
+      3.1,
+      1.2,
+      5.6
+    ],
+    "gap_sections": [
+      [
+        3,
+        0,
+        2.28
+      ],
+      [
+        0,
+        1,
+        2.55
+      ],
+      [
+        1,
+        2,
+        2.48
+      ],
+      [
+        2,
+        4,
+        2.52
+      ]
+    ],
+    "offshore_handoff_x": 0.0,
+    "ripple_spacing": 0.005,
+    "target_features": [
+      "calm grouped multi-scale short-crested incident waves",
+      "a localized resolved natural breaker",
+      "shallow wash and backwash through the boulder field",
+      "resolved wrap, split flow, wakes, and boulder wetting"
+    ],
+    "deferred_features": [
+      "people and distant coastline",
+      "resolved air, spray, bubbles, and entrainment",
+      "individual pebble geometry in the hydrodynamic grid"
+    ]
+  },
+  "end_time_s": 6.8,
+  "capture_start_s": 0.0,
+  "interval_s": 0.04,
+  "rendering": false,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "spp": 512,
+  "render_surface": "plic_boundary",
+  "save_nodal_surface": true,
+  "save_wetness": true,
+  "resumed_from": null,
+  "start_time_s": 0.0,
+  "diagnostic": true,
+  "camera": {
+    "position": [
+      6.5,
+      4.8,
+      1.25
+    ],
+    "yaw_degrees": 196.2323506611562,
+    "pitch_degrees": 12.472758324663351,
+    "vertical_fov_degrees": 30.0,
+    "exposure": 0.62,
+    "white_balance": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "light": "sunset",
+  "seed": 1001,
+  "pebble_microgeometry_enabled": true,
+  "simulated_water_only": false,
+  "ripples_enabled": false,
+  "foam_shading_enabled": false,
+  "analytic_offshore_enabled": true
+}
