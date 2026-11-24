@@ -129,19 +129,6 @@ export PYTHONPATH=.:tools
     --mesh out/capture/composites/surface_03_88s_nodal_body.npz --time 3.88 --label t388
 ```
 
-Long runs belong in a detached `tmux` session with `PYTHONUNBUFFERED=1` and a
-log under `out/`; see [`docs/results.md`](docs/results.md) for the exact
-commands that produced the captures and the numbers they returned.
-
-## Provenance
-
-This tree is the solver at the third capture's commit
-(`0dba9ac2b78d1afd0e3c351b1522c68401f92a92` in the development repository),
-with the one-off experiment drivers, the 2-D-only tools and tests, the study
-course and the agent instructions removed, and the helpers the production
-pipeline needs gathered into `tools/production_render.py`. The solver package
-and its tests are otherwise unchanged. The first capture was produced at
-`cee4a08a1f4d0300cd6d7bec2acec2079cffcb92`, before the gravel-bed closures.
 
 ## License
 
