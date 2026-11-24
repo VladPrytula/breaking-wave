@@ -27,7 +27,7 @@ no fake cgi to the extent possible: no painted foam, no prescribed breaker colla
 repair of mass, pressure or energy. Every closure is named, measurable and
 switchable, and switching it off reveals the phenomenon it owns.
 
-## What the solver is
+## What
 
 - **Equations.** One-phase incompressible Navier–Stokes for the water; the air
   is not solved. A water fraction α ∈ [0, 1] per cell is transported
@@ -85,7 +85,7 @@ to the development repository's design history, which is not part of this cut.
 
 ## Install and verify
 
-The target is a DGX Spark GB10 (`sm_121`), aarch64 Ubuntu 24.04, with CUDA and
+The tested target is a DGX Spark GB10, aarch64 Ubuntu 24.04, with CUDA and
 Python 3.12 or newer. The 3-D solver refuses to construct without a CUDA
 device; the device-independent geometry, scene and presentation tests run
 anywhere. FFmpeg is needed to encode video.
